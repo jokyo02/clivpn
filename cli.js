@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 const { join } = require('path');
 
-const miniflare = join(require.resolve('miniflare'), '../cli.js')
+const miniflare = join(require.resolve('miniflare'), '../index.js')
 //const miniflare = join(__dirname, '../node_modules/miniflare/dist/src', 'cli.js')
 
 const script = join(__dirname, './worker.js');
