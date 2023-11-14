@@ -4,12 +4,12 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node cli.js"
   },
   "engine": {
     "node": "18.x"
   },
-  "main": "./index.js",
+  "main": "./cli.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
