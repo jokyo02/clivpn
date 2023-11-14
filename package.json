@@ -14,6 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "miniflare": "^3.0"
+    "miniflare": "^2.4.1"
   }
 }
