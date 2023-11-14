@@ -16,7 +16,7 @@ const proc = spawn(`node`, [
   '-b',
   `BING_COOKIE=${process.env.BING_COOKIE || ''}`,
   '-p',
-  process.env.PORT || 8080
+  process.env.PORT || 7860
 ])
 proc.stdout.on('data', (chunk) => {
   process.stdout.write(chunk)
