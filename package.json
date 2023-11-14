@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "libc++1": "^16.0"
+    "libc++1": "^16.0",
     "miniflare": "^3.0"
   }
 }
