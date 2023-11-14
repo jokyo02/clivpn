@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "engine": {
-    "node": "18"
+    "node": "18.x"
   },
   "main": "./index.js",
   "keywords": [],
