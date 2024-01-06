@@ -2,6 +2,19 @@ const SITE_HOST = '' // 为空则自动推断
 const BING_COOKIE = '' // 换成你自己的 BING_COOKIE，操作参见 README.md
 const TARGET_HOST = 'sokwith-nbing.hf.space' // 后台服务，默认不需要修改
 
+/**
+ * 生成随机字符串
+ * @param {number} e
+ * @returns
+ */
+const randomString = (e) => {
+  e = e || 32;
+  const t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678_-+";
+  var n = "";
+  for (let i = 0; i < e; i++) n += t.charAt(getRandomInt(0, t.length));
+  return n;
+}
+
 function parseCookie(cookie, cookieName) {
   if (!cookie || !cookieName) return ''
   const targetCookie = new RegExp(`(?:[; ]|^)${cookieName}=([^;]*)`).test(cookie) ? RegExp.$1 : cookie
@@ -84,7 +97,7 @@ const handlers = {
       if (BING_COOKIE || env.BING_COOKIE) {
         headers.set('cookie', formatCookies({
           ...parseCookies(env.BING_COOKIE || BING_COOKIE, ['MUID']),
-          _U: 'xxx'
+          _U: randomString(32)
         }))
       }
       uri.host = 'www.bing.com'
