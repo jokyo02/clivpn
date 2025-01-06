@@ -85,7 +85,8 @@ async  websocketPorxy(request) {
     headers,
     method: request.method
   });
-}
+},
+  
   async fetch(request, env = {}) {
     const uri = new URL(request.url)
     console.log('uri', uri.toString())
