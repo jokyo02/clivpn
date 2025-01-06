@@ -29,4 +29,7 @@ RUN chmod 777 ./node_modules
 EXPOSE 7860
 
 # Start the application
-CMD ["node", "--experimental-vm-modules", "cli.js"]
+#CMD ["node", "--experimental-vm-modules", "cli.js"]
+
+# Start the application
+CMD ["node", "--experimental-vm-modules", "dist/bundle.js"]
