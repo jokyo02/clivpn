@@ -79,7 +79,7 @@ async  websocketPorxy(request) {
   if (headers.get("origin")) {
     headers.set("origin", "https://copilot.microsoft.com");
   }
-  headers.append("X-forwarded-for", XForwardedForIP);
+  headers.append("X-forwarded-for", "104.28.7.189");
   return fetch(reqUrl, {
     body: request.body,
     headers,
