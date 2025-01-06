@@ -69,6 +69,23 @@ const handlers = {
     })
   },
 
+  
+async function websocketPorxy(request) {
+  const reqUrl = new URL(request.url);
+  reqUrl.hostname = "copilot.microsoft.com";
+  reqUrl.protocol = "https:";
+  reqUrl.port = "";
+  const headers = new Headers(request.headers);
+  if (headers.get("origin")) {
+    headers.set("origin", "https://copilot.microsoft.com");
+  }
+  headers.append("X-forwarded-for", XForwardedForIP);
+  return fetch(reqUrl, {
+    body: request.body,
+    headers,
+    method: request.method
+  });
+}
   async fetch(request, env = {}) {
     const uri = new URL(request.url)
     console.log('uri', uri.toString())
@@ -91,7 +108,8 @@ const handlers = {
 
     const upgradeHeader = headers.get('Upgrade')
     if (upgradeHeader === 'websocket') {
-      return this.handleWebSocket(headers)
+    //  return this.handleWebSocket(headers)
+      return this.websocketPorxy(request)
     }
     if (uri.pathname.startsWith('/turing/')) {
       if (BING_COOKIE || env.BING_COOKIE) {
