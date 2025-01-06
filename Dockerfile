@@ -19,6 +19,8 @@ RUN npm ls miniflare
 #RUN npm install @miniflare/web-sockets
 
 RUN npm install --save-dev webpack webpack-cli
+RUN npm run build
+
 
 
 RUN ls -al ./node_modules/miniflare/dist/src
