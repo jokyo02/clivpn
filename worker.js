@@ -70,7 +70,7 @@ const handlers = {
   },
 
   
-async function websocketPorxy(request) {
+async  websocketPorxy(request) {
   const reqUrl = new URL(request.url);
   reqUrl.hostname = "copilot.microsoft.com";
   reqUrl.protocol = "https:";
