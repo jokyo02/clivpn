@@ -11,12 +11,15 @@ RUN git clone https://github.com/jokyo02/clivpn .
 RUN npm install
 RUN npm ls miniflare
 # Install the missing cloudflare:sockets module
-RUN npm install cloudflare-worker
+#RUN npm install cloudflare-worker
 
-RUN npm install cloudflare
+#RUN npm install cloudflare
 
 # Install the @miniflare/web-sockets module
-RUN npm install @miniflare/web-sockets
+#RUN npm install @miniflare/web-sockets
+
+RUN npm install --save-dev webpack webpack-cli
+
 
 RUN ls -al ./node_modules/miniflare/dist/src
 RUN chmod 777 ./node_modules
